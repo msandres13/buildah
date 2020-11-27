@@ -22,3 +22,5 @@ RUN mkdir -p /var/lib/shared/overlay-images /var/lib/shared/overlay-layers /var/
 # Set an environment variable to default to chroot isolation for RUN
 # instructions and "buildah run".
 ENV BUILDAH_ISOLATION=chroot
+CMD ["/bin/bash"]
+ENTRYPOINT /bin/bash
