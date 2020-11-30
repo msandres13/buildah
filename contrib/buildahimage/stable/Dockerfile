@@ -24,5 +24,7 @@ RUN mkdir -p /var/lib/shared/overlay-images /var/lib/shared/overlay-layers /var/
 # instructions and "buildah run".
 ENV BUILDAH_ISOLATION=chroot
 ADD https://raw.githubusercontent.com/containers/buildah/master/contrib/buildahimage/stable/oc-entry.sh /
+ADD https://raw.githubusercontent.com/containers/buildah/master/contrib/buildahimage/stable/test.sh /
+RUN chmod 755 /oc-entry.sh /test.sh
 CMD ["/bin/bash", "-c", "/oc-entry.sh"]
 ENTRYPOINT /bin/bash -c /oc-entry.sh
