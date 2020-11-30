@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function trace() {
   local -r EYECATCHER="[Container Build]"
   local TIMESTAMP

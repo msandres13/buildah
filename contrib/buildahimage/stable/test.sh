@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 NEW_CONTAINER_NAME=$(buildah from scratch)
