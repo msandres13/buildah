@@ -1,16 +1,14 @@
 #!/bin/bash
 
 function trace() {
-  local -r GREEN=''
-  local -r BLUE=''
-  local -r NC=''
-  local -r EYECATCHER="${GREEN}[Container Build]${NC}"
+  local -r EYECATCHER="[Container Build]"
   local TIMESTAMP
-  TIMESTAMP="${BLUE}$(date +"%Y-%m-%d %H:%M:%S,%3N")${NC}"
+  TIMESTAMP="$(date +"%Y-%m-%d %H:%M:%S,%3N")"
   readonly TIMESTAMP
   echo -e "${TIMESTAMP} ${EYECATCHER} $*"
 }
 while true; do
   trace "alive"
-  sleep 1 
+  buildah unshare /test.sh
+  sleep 60
 done
